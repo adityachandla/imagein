@@ -1,0 +1,45 @@
+{% load bootstrap4 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	{% bootstrap_css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'images/home.css' %}">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="#">Navbar</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="{% url 'about' %}">About</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+	<div class="container">
+		<div class="contain">
+			{% for im in images %}
+				<div class="card" style="width: 18rem;">
+				  <img class="card-img-top" src="{{ im.image.url }}" alt="Card image cap" style="height:20rem">
+				  <div class="card-body">
+				    <h5 class="card-title">{{ im.title }}</h5>
+				    <p class="card-text">{{ im.num_likes }}</p>
+				    <a href="{% url 'image' pk=im.pk %}" class="btn btn-primary">See</a>
+				  </div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+
+</body>
+</html>
