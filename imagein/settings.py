@@ -25,7 +25,7 @@ SECRET_KEY = 'cc%w8&3o*nw$(3d)(pr#a^sv+03jhb0u=zn^72_0m)rzm-o!ja'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pkpaints.herokuapp.com']
+ALLOWED_HOSTS = ['pkpaints.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -137,7 +137,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 import dj_database_url 
 prod_db  =  dj_database_url.config(conn_max_age=500)
