@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'images.apps.ImagesConfig',
     'bootstrap4',
+    'gdstorage',
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,6 @@ EMAIL_HOST_PASSWORD = 'robinhood1770'
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
 # Static files (CSS, JavaScript, Images)
@@ -138,6 +138,12 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'imagein-paintings'
+
+MEDIA_ROOT = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 
 import dj_database_url 
 prod_db  =  dj_database_url.config(conn_max_age=500)

@@ -10,7 +10,7 @@ def about(request):
 		form = Contact(request.POST)
 		if form.is_valid():
 			send_mail("User: "+form.cleaned_data["name"],form.cleaned_data["information"],"adityachandla@gmail.com",
-				["adityachandla@gmail.com"])
+				["khuranaprakriti@gmail.com"])
 		messages.info(request,"Mail is on it's way")
 		return redirect('about')
 	else:

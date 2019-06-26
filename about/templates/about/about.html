@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     {% bootstrap_css %}
-
+    {% bootstrap_javascript jquery='full' %}
     <title>About</title>
     <link rel="stylesheet" type="text/css" href="{% static 'about/about.css' %}">
   </head>
@@ -43,17 +43,51 @@
     </div>
     <div class="container" id="main">
       {% bootstrap_messages %}
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus nisl eget molestie tincidunt. Sed vitae ligula lacus. Duis augue tortor, ultricies non augue eget, bibendum tristique nulla. Donec feugiat eros et tincidunt rutrum. Donec blandit purus at elementum accumsan. In non justo purus. Fusce lobortis metus eget aliquet sodales.</p>
-      <p>
-      Aliquam elementum tincidunt pellentesque. Morbi laoreet sapien eros, eget volutpat metus faucibus in. Nulla congue leo ut consequat lobortis. Donec faucibus dui leo, et eleifend neque sagittis eget. Duis interdum nibh in mauris fringilla facilisis. Praesent erat leo, efficitur vel cursus in, efficitur et est. Morbi nunc urna, sodales quis mauris vitae, iaculis mattis arcu. Sed a interdum enim.</p>
+      <div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          About Me
+        </button>
+      </h5>
+    </div>
 
-      <p>
-      Nulla lobortis orci nec porta finibus. In dictum imperdiet enim ut sagittis. Vivamus mattis euismod lorem, eu hendrerit dui molestie quis. Curabitur eget tempor dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in sollicitudin ligula. Nullam et orci lorem. Curabitur non arcu vel leo feugiat varius non ut dui. Maecenas sit amet enim est. Etiam viverra felis sem, non aliquet tellus scelerisque at. Suspendisse malesuada, eros vel condimentum lobortis, mi velit porta mauris, a iaculis neque arcu sed nibh. Duis in nunc a metus porta volutpat. Nullam egestas mi nec enim fermentum, dapibus vestibulum sem ultricies. Mauris cursus tincidunt placerat. Donec maximus purus quam, et molestie ligula suscipit nec. Etiam vel nulla eu eros vehicula vestibulum ac et quam.</p>
-      <p>
-      Proin vitae lectus nec turpis dapibus tincidunt. Nunc maximus tincidunt tincidunt. Integer velit ligula, imperdiet vitae erat eget, hendrerit iaculis enim. In sit amet mollis dui, eu ornare sem. Phasellus luctus mollis mi ut efficitur. Donec ullamcorper sem ut posuere dictum. Suspendisse vehicula felis commodo augue tempor, ac ullamcorper tortor tristique. Nam luctus ultricies mauris. Pellentesque faucibus velit elit, vitae rhoncus eros mattis sed.</p>
-      <p>
-      In hac habitasse platea dictumst. Nam purus quam, ultricies id nibh a, commodo bibendum nunc. Donec a euismod urna. Curabitur scelerisque nisi quis nisl lacinia ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris massa elit, hendrerit in viverra eu, fermentum quis enim. Sed vestibulum, augue sit amet consectetur gravida, odio massa efficitur nibh, vitae mollis sem felis sed est. Curabitur eget justo placerat, ornare purus ac, lacinia tortor. Proin sit amet congue ante</p>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        My name is prakriti khurana and i study in BFIA  in Shaheed Sukhdev college of business studies. I love to paint in my spare time, which is very less. This website is a collection of some of my paintings, I would love to hear what you think about them. Press Like if you like them and leave a comment if you have something to say about it. Also feel free to contact me via the message box below.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Paintings
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        I have been painting since as long as I can remember and during that time I have tried to experiment with as many drawing forms as I could. I have made paintings using watercolors, graphite and charcoal. I also like to experiment with paintings on body as some of the images here might indicate.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Extra-curriculars
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        Except painting I am also involved in social work as part of an organization named Enactus. As part of that I help with projects that focus on betterment of children in backward parts of the city. I have also been a part of the music club of my college and won various national level competetions in acapella. I am also an avid reader and debator.
+      </div>
+    </div>
+  </div>
+</div>
     </div>
 
     <div class="container" style="margin-top: 2rem;">

@@ -12,10 +12,15 @@ body{
 
 #person-div{
 	position: absolute;
-	top: 20%;
+	top: 23%;
 	left: 35%;
 	z-index: 200;
 	transition: transform 1s ease-out;
+}
+
+#person-div img{
+	height: 300px;
+	width: 500px;
 }
 
 #person-div:hover{
