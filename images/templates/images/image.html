@@ -28,24 +28,28 @@
 	    </ul>
 	  </div>
 	</nav>
-		{% for message in messages %}
-		<div class="container comment" >
-			{{ message }}
-		</div>
-		{% endfor %}
+	{% for message in messages %}
+	<div class="container comment" >
+		{{ message }}
+	</div>
+	{% endfor %}
 	<div class="container text-center">
-		<div style="margin-top:120px"> </div>
+		<div style="margin-top:145px"> </div>
 		<img src="{{ im.image.url }}" id="painting">
-		<div style="margin-top:120px"> </div>
+		<div style="margin-top:145px"> </div>
 		<button id="rotateleft" class="btn btn-primary">Rotate Left</button>
 		<button id="rotateright" class="btn btn-primary">Rotate Right</button>
-		<h1 class="display-4"> {{ im.title }} <div id="imid" hidden="true">{{ im.id }}</div></h1>
 	</div>
+	<div id="imid" hidden="true">{{ im.pk }}</div>
 	<div class="container">
-		<div class="cardy">
-			<p> {{ im.about }} </p>
-			<p><button class="btn btn-primary" id="likebtn">Like</button><strong id="num_likes"> {{ im.num_likes }}</strong> </p>
-			<p> uploaded on {{im.date_uploaded}}</p>
+		<div class="card">
+			<h5 class="card-title display-3 text-center bg-light">{{ im.title }}</h5>
+			<hr>
+		  <div class="card-body">
+		    <p class="card-text">{{ im.about }}</p>
+		    <p><button class="btn btn-primary" id="likebtn">Like</button><strong id="num_likes">{{ im.num_likes }}</strong> </p>
+		    <a href="#" class="card-link">Uploaded on {{ im.date_uploaded }}</a>
+		  </div>
 		</div>
 	</div>
 

@@ -16,17 +16,20 @@ rotateRight.addEventListener('click', function(){
 })
 
 
-$("#likebtn").click(function(){
-			$.get('/putlike/'+imid.innerHTML,
-				function(data,status){
-					console.log(data);
-					if(data.success)
-						num_likes.innerHTML = "   "+(parseInt(num_likes.innerHTML)+1);
-					else
-						alert("You have already liked this painting");
-				}
-			);
-		}
-	);
+document.addEventListener("DOMContentLoaded", function(event) { 
+	$("#likebtn").click(function(){
+				$.get('/putlike/'+imid.innerHTML,
+					function(data,status){
+						console.log(data);
+						if(data.success)
+							num_likes.innerHTML = "   "+(parseInt(num_likes.innerHTML)+1);
+						else
+							alert("You have already liked this painting");
+					}
+				);
+			}
+		);
+
+});
 
 

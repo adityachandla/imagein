@@ -25,7 +25,7 @@ SECRET_KEY = 'cc%w8&3o*nw$(3d)(pr#a^sv+03jhb0u=zn^72_0m)rzm-o!ja'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pkpaints.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['django-env.pzisksjmux.us-west-2.elasticbeanstalk.com','127.0.0.1']
 
 
 # Application definition
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'images.apps.ImagesConfig',
     'bootstrap4',
-    'gdstorage',
 ]
 
 MIDDLEWARE = [
@@ -137,14 +136,6 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(PROJECT_ROOT,'media')
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = 'imagein-paintings'
-
-MEDIA_ROOT = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
-
-import dj_database_url 
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)

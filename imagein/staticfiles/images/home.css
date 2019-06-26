@@ -1,0 +1,22 @@
+body{
+	background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+	height: 1000px;
+	background-repeat: no-repeat;
+}
+
+.contain{
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+	grid-template-rows: auto;
+	align-items: center;
+	justify-content: center;
+}
+
+.card{
+	transition: transform 1s ease-out;
+}
+
+.card:hover{
+	transform: scale(1.05);
+}

@@ -18,7 +18,8 @@ def image(request,pk):
 			comm = CommentsModel(person=get_client_ip(request),name=form.cleaned_data['name'],
 				comment=form.cleaned_data['comment'],image=im)
 			comm.save()
-		messages.info(request,"You have already commented")
+		else:
+			messages.info(request,"You have already commented")
 		print("message posted")
 	form = CommentForm()
 	comments = im.commentsmodel_set.all()
