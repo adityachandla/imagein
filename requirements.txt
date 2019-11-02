@@ -4,7 +4,7 @@ django-appconf==1.0.3
 django-bootstrap4==0.0.8
 gunicorn==19.9.0
 httplib2==0.13.0
-Pillow==6.0.0
+Pillow==6.2.0
 PyYAML==3.13
 requests==2.20.1
 rsa==4.0
